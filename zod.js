@@ -1,12 +1,12 @@
 //  we can use zod for better input validation 
 
 const express = require("express");
-const zod = require("zod");
 const app = express();
+const zod = require("zod");
 
 
 app.use(express.json());
-// const schemas = zod.array(zod.number());  // now we can put this in our object schema instead of a single thing
+const schemas = zod.array(zod.number());  // now we can put this in our object schema instead of a single thing
 
 const schema = zod.object({
     email : zod.string(),
@@ -46,16 +46,33 @@ app.listen(3000);
 // validateInput([1,2,3]);
 
 // function validateInput1(obj){
-// const schema = zod.object({
+//     const schema = zod.object({
 //     email : zod.string().email(),
 //     password : zod.string().min(8)
 // })
 
 // const response = schema.safeParse(obj);
 // console.log(response)
+// return response
 // }
 
 // validateInput1({
 //     email: "pph@gmail.com",
 //     password: "12345678"
 // })
+
+// // zod used for http requests
+
+// app.post('/login', (req,res)=>{            // if u encounter error make sure u have enables app.use(express.json())
+//     const response = validateInput1(req.body)
+//     if(!response.success){
+//         //console.log(response.error)
+//         res.json({
+//             msg: "Your inputs are invalid"
+//         })
+//         return;
+//     } 
+//     res.json({ msg : " Your inputs are valid"});
+    
+// })
+// app.listen(3000);
