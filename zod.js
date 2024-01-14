@@ -29,3 +29,33 @@ app.post('/health-checkup', (req,res)=>{
 })
 
 app.listen(3000);
+
+
+// assignment
+// if this is an arr of number with atleast 1 input, return true, else return false
+// use for email and passoword with email as input and password with min 8 chars.
+// const zod = require("zod")
+
+
+// function validateInput(arr){
+//     const schema  = zod.array(zod.number());
+//     const response = schema.safeParse(arr);
+//     console.log(response);
+// }
+
+// validateInput([1,2,3]);
+
+// function validateInput1(obj){
+// const schema = zod.object({
+//     email : zod.string().email(),
+//     password : zod.string().min(8)
+// })
+
+// const response = schema.safeParse(obj);
+// console.log(response)
+// }
+
+// validateInput1({
+//     email: "pph@gmail.com",
+//     password: "12345678"
+// })
